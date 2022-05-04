@@ -61,6 +61,7 @@ fun shoIntro(){
         Text(text="")
         Text(text = " NAME  NONDUMISO GAGA",color = Color.Black)
         Text(text="COURSE Diploma in ICT in Applications Development",color = Color.Black)
+        Text(text="DEPARTMENT Information Technologgy")
         Text(text= "STUDENT NUMBER  22043053",color = Color.Black)
     }
 }
