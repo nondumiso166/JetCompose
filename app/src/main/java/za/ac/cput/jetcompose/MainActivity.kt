@@ -5,10 +5,12 @@ Nondumiso Gaga (220430853)
 package za.ac.cput.jetcompose
 
 
+import android.content.Intent
 import android.graphics.fonts.FontStyle
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -22,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.fontResource
 import androidx.compose.ui.text.TextStyle
@@ -69,6 +72,18 @@ fun ScreenText(){
             Text(text = " Info")
         }
     }
+    val mainContext = LocalContext.current
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Bottom){
+        Button(onClick={mainContext.startActivity(Intent(mainContext,MainActivity2::class.java ))},colors =
+        ButtonDefaults.buttonColors(backgroundColor = Color.Black),
+            border = BorderStroke(2.dp, Color.Magenta)
+        ){
+            Text(text = "Start Journey" ,color=Color.White)
+        }}
+
     }
 
 @Composable
