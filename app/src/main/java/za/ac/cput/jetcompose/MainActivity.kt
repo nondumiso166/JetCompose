@@ -6,7 +6,6 @@ package za.ac.cput.jetcompose
 
 
 import android.content.Intent
-import android.graphics.fonts.FontStyle
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -46,23 +45,26 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 @Preview
-fun ScreenText(){
-    val visible: MutableState<Boolean> = remember {mutableStateOf(false)}
-   ShowDialog(visible = visible)
+fun ScreenText() {
+    val visible: MutableState<Boolean> = remember { mutableStateOf(false) }
+    ShowDialog(visible = visible)
     Column(
-        modifier= Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Top) {
+        verticalArrangement = Arrangement.Top
+    ) {
         Text(
             "Welcome to my jetpack compose journey",
-            color = Color.Magenta,fontSize = 30.sp ,
+            color = Color.Magenta, fontSize = 30.sp,
             fontWeight = FontWeight.Bold
-        )}
+        )
+    }
     Column(
-        modifier= Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement=Arrangement.Center) {
-        Button(onClick = { visible.value= true })
+        verticalArrangement = Arrangement.Center
+    ) {
+        Button(onClick = { visible.value = true })
         {
             Icon(
                 imageVector = Icons.Filled.Info,
@@ -76,15 +78,19 @@ fun ScreenText(){
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Bottom){
-        Button(onClick={mainContext.startActivity(Intent(mainContext,MainActivity2::class.java ))},colors =
-        ButtonDefaults.buttonColors(backgroundColor = Color.Black),
+        verticalArrangement = Arrangement.Bottom
+    ) {
+        Button(
+            onClick = { mainContext.startActivity(Intent(mainContext, MainActivity2::class.java)) },
+            colors =
+            ButtonDefaults.buttonColors(backgroundColor = Color.Black),
             border = BorderStroke(2.dp, Color.Magenta)
-        ){
-            Text(text = "Start Journey" ,color=Color.White)
-        }}
-
+        ) {
+            Text(text = "Start Journey", color = Color.White)
+        }
     }
+}
+
 
 @Composable
 fun ShowDialog(visible:MutableState<Boolean>){

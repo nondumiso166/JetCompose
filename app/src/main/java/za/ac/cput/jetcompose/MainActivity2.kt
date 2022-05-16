@@ -21,14 +21,14 @@ import androidx.compose.ui.unit.dp
 class MainActivity2 : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {shoIntro()
+        setContent {showIntro()
 
         }
     }
 }
 @Composable
 @Preview
-fun shoIntro(){
+fun showIntro(){
 
     val mainContext =LocalContext.current
    Column(
@@ -45,6 +45,7 @@ fun shoIntro(){
            Text(text="Back",color = Color.White)
        }
    }
+    val mContext = LocalContext.current
     Column (
         modifier = Modifier
             .fillMaxWidth()
@@ -52,7 +53,7 @@ fun shoIntro(){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
             ){
-        Button(onClick ={},
+        Button(onClick ={mContext.startActivity(Intent(mContext,MainActivity3::class.java ))},
             colors = ButtonDefaults.buttonColors(backgroundColor =Color.Black),
              border = BorderStroke(2.dp,Color.Magenta),
               modifier = Modifier.padding(7.dp)) {
